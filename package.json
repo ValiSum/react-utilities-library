@@ -4,7 +4,7 @@
   "description": "React Utilities Library",
   "author": "ValiSum",
   "license": "MIT",
-  "repository": "https://valisum.com",
+  "repository": "https://github.com/ValiSum/react-utilities-library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
