@@ -2,21 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { ReactComponent as EmptyStar } from './assets/empty-star.svg'
-import { ReactComponent as HalfStar } from './assets/half-star.svg'
-import { ReactComponent as FullStar } from './assets/full-star.svg'
+import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons'
+import {
+  faStar as fullStar,
+  faStarHalfAlt as halfStar
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const RatingStyled = styled.div`
-  border: 1px solid black;
-  height: 50px;
-`
+const RatingStyled = styled.div``
 
 const Rating = ({ name }) => (
   <RatingStyled>
-    {name}
-    <EmptyStar />
-    <HalfStar />
-    <FullStar />
+    <div>{name}</div>
+    <FontAwesomeIcon icon={fullStar} />
+    <FontAwesomeIcon icon={fullStar} />
+    <FontAwesomeIcon icon={fullStar} />
+    <FontAwesomeIcon icon={halfStar} />
+    <FontAwesomeIcon icon={emptyStar} />
   </RatingStyled>
 )
 
