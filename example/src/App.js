@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'react-utilities-library'
+import { Button, Rating } from 'react-utilities-library'
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <Button name="Mi boton" />
+        <br />
+        <Rating />
       </div>
     )
   }
