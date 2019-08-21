@@ -10,39 +10,74 @@
     "version": "1.0.0",
     "repository": "https://github.com/ValiSum/react-utilities-library",
     "native": false,
-    "codeSandbox": false,
-    "themeConfig": {
-      "showPlaygroundEditor": true,
-      "colors": {
-        "primary": "#009090"
-      },
-      "styles": {
-        "body": {
-          "fontFamily": "\"Rubik\", sans-serif"
-        },
-        "h1": {
-          "fontFamily": "\"Rubik\", sans-serif"
-        },
-        "h2": {
-          "fontFamily": "\"Rubik\", sans-serif"
-        }
+    "themeConfig": {},
+    "separator": "-",
+    "base": "/",
+    "src": "./",
+    "dest": "/docs"
+  },
+  "entries": [
+    {
+      "key": "src/GettingStarted.mdx",
+      "value": {
+        "name": "Getting Started",
+        "route": "/",
+        "id": "8fa0304c5499a8fa3826e6c36f278432",
+        "filepath": "src/GettingStarted.mdx",
+        "fullpath": "/Users/valisumurduc/Sites/react-utilities-library/src/GettingStarted.mdx",
+        "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/GettingStarted.mdx",
+        "slug": "src-getting-started",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "getting-started",
+            "depth": 1,
+            "value": "Getting Started"
+          }
+        ]
       }
     },
-    "separator": "-",
-    "dest": "/docs",
-    "hashRouter": "true",
-    "base": "/",
-    "htmlContext": {
-      "head": {
-        "links": [
+    {
+      "key": "src/Button/Button.mdx",
+      "value": {
+        "name": "Button",
+        "route": "/button",
+        "menu": "Components",
+        "id": "84b7c5fedddc508968c380b1bba30402",
+        "filepath": "src/Button/Button.mdx",
+        "fullpath": "/Users/valisumurduc/Sites/react-utilities-library/src/Button/Button.mdx",
+        "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/Button/Button.mdx",
+        "slug": "src-button-button",
+        "headings": [
           {
-            "rel": "stylesheet",
-            "href": "https://fonts.googleapis.com/css?family=Rubik:400,400i,700,700i&display=swap"
+            "slug": "button",
+            "depth": 1,
+            "value": "Button"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/Rating/Rating.mdx",
+      "value": {
+        "name": "Rating",
+        "route": "/rating",
+        "menu": "Components",
+        "id": "6bd77e68f71a31269734a569de1dd4f7",
+        "filepath": "src/Rating/Rating.mdx",
+        "fullpath": "/Users/valisumurduc/Sites/react-utilities-library/src/Rating/Rating.mdx",
+        "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/Rating/Rating.mdx",
+        "slug": "src-rating-rating",
+        "headings": [
+          {
+            "slug": "rating",
+            "depth": 1,
+            "value": "Rating"
           }
         ]
       }
     }
-  },
+  ],
   "props": [
     {
       "key": "lib/Button.js",
@@ -136,79 +171,34 @@
           "methods": [],
           "actualName": "Rating",
           "props": {
-            "name": {
+            "number": {
               "type": {
-                "name": "string"
+                "name": "number"
               },
               "required": false,
-              "description": "Name",
+              "description": "Star number"
+            },
+            "name": {
               "defaultValue": {
                 "value": "'Rating'",
                 "computed": false
-              }
+              },
+              "required": false
             }
           }
         }
       ]
-    }
-  ],
-  "entries": [
-    {
-      "key": "src/GettingStarted.mdx",
-      "value": {
-        "name": "Getting Started",
-        "route": "/",
-        "id": "8fa0304c5499a8fa3826e6c36f278432",
-        "filepath": "src/GettingStarted.mdx",
-        "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/GettingStarted.mdx",
-        "slug": "src-getting-started",
-        "menu": "",
-        "headings": [
-          {
-            "slug": "getting-started",
-            "depth": 1,
-            "value": "Getting Started"
-          }
-        ]
-      }
     },
     {
-      "key": "src/Button/Button.mdx",
-      "value": {
-        "name": "Button",
-        "route": "/button",
-        "menu": "Components",
-        "id": "84b7c5fedddc508968c380b1bba30402",
-        "filepath": "src/Button/Button.mdx",
-        "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/Button/Button.mdx",
-        "slug": "src-button-button",
-        "headings": [
-          {
-            "slug": "button",
-            "depth": 1,
-            "value": "Button"
-          }
-        ]
-      }
-    },
-    {
-      "key": "src/Rating/Rating.mdx",
-      "value": {
-        "name": "Rating",
-        "route": "/rating",
-        "menu": "Components",
-        "id": "6bd77e68f71a31269734a569de1dd4f7",
-        "filepath": "src/Rating/Rating.mdx",
-        "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/Rating/Rating.mdx",
-        "slug": "src-rating-rating",
-        "headings": [
-          {
-            "slug": "rating",
-            "depth": 1,
-            "value": "Rating"
-          }
-        ]
-      }
+      "key": "src/Rating/components/RatingIcon/RatingIcon.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "RatingIcon",
+          "methods": [],
+          "actualName": "RatingIcon"
+        }
+      ]
     }
   ]
 }

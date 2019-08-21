@@ -10,6 +10,12 @@
 npm install --save react-utilities-library
 ```
 
+o
+
+```bash
+npm install --save react-utilities-library
+```
+
 ## Usage
 
 ```jsx
@@ -18,10 +24,8 @@ import React, { Component } from 'react'
 import MyComponent from 'react-utilities-library'
 
 class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
+  render() {
+    return <MyComponent />
   }
 }
 ```
