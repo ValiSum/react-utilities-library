@@ -6,14 +6,16 @@
 
 ## Install
 
+NPM
+
 ```bash
 npm install --save react-utilities-library
 ```
 
-o
+YARN
 
 ```bash
-npm install --save react-utilities-library
+yarn add react-utilities-library
 ```
 
 ## Usage
@@ -21,11 +23,11 @@ npm install --save react-utilities-library
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-utilities-library'
+import { Rating } from 'react-utilities-library'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <Rating />
   }
 }
 ```
