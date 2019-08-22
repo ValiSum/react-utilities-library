@@ -26,7 +26,8 @@ const config = {
         o: false,
         open: false,
         'open-browser': false,
-        root: '/Users/valisumurduc/Sites/react-utilities-library/.docz',
+        root:
+          '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz',
         base: '/',
         source: './',
         src: './',
@@ -42,7 +43,7 @@ const config = {
         title: 'React Utilities Library',
         description: 'React Utilities Library',
         host: 'localhost',
-        port: 3000,
+        port: 3003,
         p: 3000,
         separator: '-',
         themeConfig: {},
@@ -51,43 +52,46 @@ const config = {
         mdPlugins: [],
         hastPlugins: [],
         paths: {
-          root: '/Users/valisumurduc/Sites/react-utilities-library',
+          root:
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library',
           templates:
-            '/Users/valisumurduc/Sites/react-utilities-library/node_modules/docz-core/dist/templates',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/node_modules/docz-core/dist/templates',
           packageJson:
-            '/Users/valisumurduc/Sites/react-utilities-library/package.json',
-          docz: '/Users/valisumurduc/Sites/react-utilities-library/.docz',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/package.json',
+          docz:
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz',
           cache:
-            '/Users/valisumurduc/Sites/react-utilities-library/.docz/.cache',
-          app: '/Users/valisumurduc/Sites/react-utilities-library/.docz/app',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/.cache',
+          app:
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/app',
           appPublic:
-            '/Users/valisumurduc/Sites/react-utilities-library/.docz/public',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/public',
           appNodeModules:
-            '/Users/valisumurduc/Sites/react-utilities-library/node_modules',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/node_modules',
           appPackageJson:
-            '/Users/valisumurduc/Sites/react-utilities-library/package.json',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/package.json',
           appYarnLock:
-            '/Users/valisumurduc/Sites/react-utilities-library/node_modules/docz-core/yarn.lock',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/node_modules/docz-core/yarn.lock',
           ownNodeModules:
-            '/Users/valisumurduc/Sites/react-utilities-library/node_modules/docz-core/node_modules',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/node_modules/docz-core/node_modules',
           gatsbyConfig:
-            '/Users/valisumurduc/Sites/react-utilities-library/gatsby-config.js',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/gatsby-config.js',
           gatsbyBrowser:
-            '/Users/valisumurduc/Sites/react-utilities-library/gatsby-browser.js',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/gatsby-browser.js',
           gatsbyNode:
-            '/Users/valisumurduc/Sites/react-utilities-library/gatsby-node.js',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/gatsby-node.js',
           gatsbySSR:
-            '/Users/valisumurduc/Sites/react-utilities-library/gatsby-ssr.js',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/gatsby-ssr.js',
           importsJs:
-            '/Users/valisumurduc/Sites/react-utilities-library/.docz/app/imports.js',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/app/imports.js',
           rootJs:
-            '/Users/valisumurduc/Sites/react-utilities-library/.docz/app/root.jsx',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/app/root.jsx',
           indexJs:
-            '/Users/valisumurduc/Sites/react-utilities-library/.docz/app/index.jsx',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/app/index.jsx',
           indexHtml:
-            '/Users/valisumurduc/Sites/react-utilities-library/.docz/app/index.html',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/app/index.html',
           db:
-            '/Users/valisumurduc/Sites/react-utilities-library/.docz/app/db.json',
+            '/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/app/db.json',
         },
         version: '1.0.0',
       },

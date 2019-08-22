@@ -24,7 +24,7 @@
         "route": "/",
         "id": "8fa0304c5499a8fa3826e6c36f278432",
         "filepath": "src/GettingStarted.mdx",
-        "fullpath": "/Users/valisumurduc/Sites/react-utilities-library/src/GettingStarted.mdx",
+        "fullpath": "/home/vsumurduc/Documents/workspace/react/react-utilities-library/src/GettingStarted.mdx",
         "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/GettingStarted.mdx",
         "slug": "src-getting-started",
         "menu": "",
@@ -45,7 +45,7 @@
         "menu": "Components",
         "id": "84b7c5fedddc508968c380b1bba30402",
         "filepath": "src/Button/Button.mdx",
-        "fullpath": "/Users/valisumurduc/Sites/react-utilities-library/src/Button/Button.mdx",
+        "fullpath": "/home/vsumurduc/Documents/workspace/react/react-utilities-library/src/Button/Button.mdx",
         "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/Button/Button.mdx",
         "slug": "src-button-button",
         "headings": [
@@ -65,7 +65,7 @@
         "menu": "Components",
         "id": "6bd77e68f71a31269734a569de1dd4f7",
         "filepath": "src/Rating/Rating.mdx",
-        "fullpath": "/Users/valisumurduc/Sites/react-utilities-library/src/Rating/Rating.mdx",
+        "fullpath": "/home/vsumurduc/Documents/workspace/react/react-utilities-library/src/Rating/Rating.mdx",
         "link": "https://github.com/ValiSum/react-utilities-library/edit/master/src/Rating/Rating.mdx",
         "slug": "src-rating-rating",
         "headings": [
@@ -73,6 +73,16 @@
             "slug": "rating",
             "depth": 1,
             "value": "Rating"
+          },
+          {
+            "slug": "props",
+            "depth": 3,
+            "value": "Props"
+          },
+          {
+            "slug": "usage",
+            "depth": 3,
+            "value": "Usage"
           }
         ]
       }
@@ -112,14 +122,14 @@
           "methods": [],
           "actualName": "Rating",
           "props": {
-            "name": {
+            "number": {
               "type": {
-                "name": "string"
+                "name": "number"
               },
               "required": false,
-              "description": "Name",
+              "description": "Star number",
               "defaultValue": {
-                "value": "\"Rating\"",
+                "value": "5",
                 "computed": false
               }
             }
@@ -176,14 +186,11 @@
                 "name": "number"
               },
               "required": false,
-              "description": "Star number"
-            },
-            "name": {
+              "description": "Star number",
               "defaultValue": {
-                "value": "'Rating'",
+                "value": "5",
                 "computed": false
-              },
-              "required": false
+              }
             }
           }
         }

@@ -1,8 +1,8 @@
 var plugins = [{
-      plugin: require('/Users/valisumurduc/Sites/react-utilities-library/.docz/node_modules/gatsby-plugin-mdx/gatsby-ssr'),
-      options: {"plugins":[],"extensions":[".md",".mdx"],"remarkPlugins":[[null,{"type":"yaml","marker":"-"}],null],"rehypePlugins":[null,null],"defaultLayouts":{"default":"/Users/valisumurduc/Sites/react-utilities-library/.docz/node_modules/gatsby-theme-docz/src/base/Layout.js"}},
+      plugin: require('/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/node_modules/gatsby-plugin-mdx/gatsby-ssr'),
+      options: {"plugins":[],"extensions":[".md",".mdx"],"remarkPlugins":[[null,{"type":"yaml","marker":"-"}],null],"rehypePlugins":[null,null],"defaultLayouts":{"default":"/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/node_modules/gatsby-theme-docz/src/base/Layout.js"}},
     },{
-      plugin: require('/Users/valisumurduc/Sites/react-utilities-library/.docz/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/home/vsumurduc/Documents/workspace/react/react-utilities-library/.docz/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:

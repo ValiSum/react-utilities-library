@@ -1,4 +1,7 @@
+import * as path from 'path'
 import pkg from './package.json'
+
+const SRC = path.resolve(__dirname, 'src')
 
 export default {
   title: 'React Utilities Library',
@@ -7,5 +10,10 @@ export default {
   base: '/',
   src: './',
   dest: '/docs',
-  menu: ['Getting Started', 'Components', 'FAQs']
+  menu: ['Getting Started', 'Components', 'FAQs'],
+  onCreateWebpackChain: config => {
+    config.resolve.alias.set('@components', `${SRC}`)
+
+    return config
+  }
 }

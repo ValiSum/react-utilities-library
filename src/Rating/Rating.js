@@ -25,7 +25,7 @@ const RatingPropTypes = {
 Rating.propTypes = RatingPropTypes
 
 Rating.defaultProps = {
-  name: 'Rating'
+  number: 5
 }
 
 export { Rating as default, RatingPropTypes }
