@@ -2,12 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons'
-import {
-  faStar as fullStar,
-  faStarHalfAlt as halfStar
-} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { StarBorder, StarHalf, Star } from '@material-ui/icons'
 
 const Container = styled.div`
   position: relative;
@@ -28,12 +23,33 @@ const RightHalfOfIcon = styled.div`
   width: 50%;
   height: 100%;
 `
+const IconContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  & svg {
+    font-size: ${props => props.size}px;
+    color: ${props => props.color};
+  }
+`
 
-const RatingIcon = () => (
+const getStarType = starType =>
+  ({
+    empty: <StarBorder />,
+    half: <StarHalf />,
+    full: <Star />
+  }[starType])
+
+const RatingIcon = ({ index, onMouseOver, starType, size, color }) => (
   <Container>
-    <LeftHalfOfIcon onMouseOver={() => console.log('LEFT')} />
-    <RightHalfOfIcon onMouseOver={() => console.log('RIGHT')} />
-    <FontAwesomeIcon icon={fullStar} />
+    <LeftHalfOfIcon
+      onMouseOver={() => onMouseOver({ index, starType: 'half' })}
+    />
+    <RightHalfOfIcon
+      onMouseOver={() => onMouseOver({ index, starType: 'full' })}
+    />
+    <IconContainer size={size} color={color}>
+      {getStarType(starType)}
+    </IconContainer>
   </Container>
 )
 
