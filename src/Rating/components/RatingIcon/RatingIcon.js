@@ -39,13 +39,15 @@ const getStarType = starType =>
     full: <Star />
   }[starType])
 
-const RatingIcon = ({ index, onMouseOver, starType, size, color }) => (
+const RatingIcon = ({ index, onMouseOver, onClick, starType, size, color }) => (
   <Container>
     <LeftHalfOfIcon
       onMouseOver={() => onMouseOver({ index, starType: 'half' })}
+      onClick={onClick}
     />
     <RightHalfOfIcon
       onMouseOver={() => onMouseOver({ index, starType: 'full' })}
+      onClick={onClick}
     />
     <IconContainer size={size} color={color}>
       {getStarType(starType)}

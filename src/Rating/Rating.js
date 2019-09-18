@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import RatingIcon from './components/RatingIcon/RatingIcon'
@@ -7,18 +7,28 @@ const RatingStyled = styled.div`
   display: flex;
 `
 
-const Rating = ({ number, size, color }) => {
+const Rating = ({ size, color, onRating }) => {
   const [selectedStar, setSelectedStar] = useState({
-    index: 1,
+    index: 0,
     starType: 'empty'
   })
+  const [clickedStar, setClickedStar] = useState({
+    index: 0,
+    starType: 'empty'
+  })
+  const [rating, setRating] = useState(0)
 
-  const onMouseOver = starSelected => {
-    setSelectedStar(starSelected)
-  }
+  const onMouseOver = starSelected => setSelectedStar(starSelected)
+
+  const onMouseLeave = () => setSelectedStar(clickedStar)
+
+  const onClick = () => setClickedStar(selectedStar)
+
+  useEffect(() => {
+    onRating(clickedStar)
+  }, [clickedStar])
 
   const getStar = starIndex => {
-    console.log(selectedStar)
     const numberOfFullStars = Math.floor(selectedStar.index)
     let starType = 'empty'
 
@@ -27,13 +37,12 @@ const Rating = ({ number, size, color }) => {
     } else if (starIndex === numberOfFullStars) {
       starType = selectedStar.starType
     }
-
-    console.log(starType, starIndex)
     return (
       <RatingIcon
         key={starIndex}
         index={starIndex}
         onMouseOver={onMouseOver}
+        onClick={onClick}
         starType={starType}
         size={size}
         color={color}
@@ -42,8 +51,8 @@ const Rating = ({ number, size, color }) => {
   }
 
   return (
-    <RatingStyled>
-      {Array(number)
+    <RatingStyled onMouseLeave={onMouseLeave}>
+      {Array(5)
         .fill()
         .map((_, starIndex) => getStar(starIndex + 1))}
     </RatingStyled>
@@ -51,20 +60,20 @@ const Rating = ({ number, size, color }) => {
 }
 
 const RatingPropTypes = {
-  /** Star number */
-  number: PropTypes.number,
   /** Star size */
   size: PropTypes.number,
   /** Star color */
-  color: PropTypes.string
+  color: PropTypes.string,
+  /** Function */
+  onRating: PropTypes.func
 }
 
 Rating.propTypes = RatingPropTypes
 
 Rating.defaultProps = {
-  number: 5,
   size: 30,
-  color: 'orange'
+  color: 'orange',
+  onRating: Function.prototype
 }
 
 export { Rating as default, RatingPropTypes }
