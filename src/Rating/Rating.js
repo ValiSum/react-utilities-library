@@ -1,10 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import useDidMountEffect from './utils/useDidMountEffect'
+import Tooltip from './components/Tooltip/Tooltip'
 import RatingIcon from './components/RatingIcon/RatingIcon'
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const RatingStyled = styled.div`
   display: flex;
+`
+
+const RatingInfo = styled.span`
+  margin-left: 5px;
+  min-width: 30px;
 `
 
 const Rating = ({ size, color, onRating }) => {
@@ -24,8 +36,23 @@ const Rating = ({ size, color, onRating }) => {
 
   const onClick = () => setClickedStar(selectedStar)
 
-  useEffect(() => {
-    onRating(clickedStar)
+  const getRating = () => {
+    if (selectedStar.starType === 'half') {
+      return selectedStar.index * 2 - 1
+    }
+    if (selectedStar.starType === 'full') {
+      return selectedStar.index * 2
+    }
+
+    return selectedStar.index
+  }
+
+  useDidMountEffect(() => {
+    setRating(getRating())
+  }, [selectedStar])
+
+  useDidMountEffect(() => {
+    onRating(rating)
   }, [clickedStar])
 
   const getStar = starIndex => {
@@ -38,24 +65,33 @@ const Rating = ({ size, color, onRating }) => {
       starType = selectedStar.starType
     }
     return (
-      <RatingIcon
+      <Tooltip
         key={starIndex}
-        index={starIndex}
-        onMouseOver={onMouseOver}
-        onClick={onClick}
-        starType={starType}
-        size={size}
-        color={color}
-      />
+        show={starIndex === selectedStar.index}
+        text={rating}
+      >
+        <RatingIcon
+          key={starIndex}
+          index={starIndex}
+          onMouseOver={onMouseOver}
+          onClick={onClick}
+          starType={starType}
+          size={size}
+          color={color}
+        />
+      </Tooltip>
     )
   }
 
   return (
-    <RatingStyled onMouseLeave={onMouseLeave}>
-      {Array(5)
-        .fill()
-        .map((_, starIndex) => getStar(starIndex + 1))}
-    </RatingStyled>
+    <Container>
+      <RatingStyled onMouseLeave={onMouseLeave}>
+        {Array(5)
+          .fill()
+          .map((_, starIndex) => getStar(starIndex + 1))}
+      </RatingStyled>
+      <RatingInfo>({rating})</RatingInfo>
+    </Container>
   )
 }
 
