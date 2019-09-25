@@ -4,6 +4,12 @@
 # docz
 .docz
 
+# coverage
+coverage
+
+# lib
+lib
+
 # dependencies
 node_modules
 
