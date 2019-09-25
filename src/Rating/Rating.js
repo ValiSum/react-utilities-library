@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import useDidMountEffect from './utils/useDidMountEffect'
-import Tooltip from './components/Tooltip/Tooltip'
-import RatingIcon from './components/RatingIcon/RatingIcon'
+import { getRating } from './utils/getRating'
+import RatingItem from './components/RatingItem'
 
 const Container = styled.div`
   display: flex;
@@ -19,83 +18,68 @@ const RatingInfo = styled.span`
   min-width: 30px;
 `
 
+const useDidMountEffect = (func, deps) => {
+  const didMount = useRef(false)
+
+  useEffect(() => {
+    if (didMount.current) func()
+    else didMount.current = true
+  }, deps)
+}
+
 const Rating = ({ size, color, onRating }) => {
-  const [selectedStar, setSelectedStar] = useState({
+  const [overedItem, setOveredItem] = useState({
     index: 0,
-    starType: 'empty'
+    type: 'empty'
   })
-  const [clickedStar, setClickedStar] = useState({
+  const [clickedItem, setClickedItem] = useState({
     index: 0,
-    starType: 'empty'
+    type: 'empty'
   })
   const [rating, setRating] = useState(0)
 
-  const onMouseOver = starSelected => setSelectedStar(starSelected)
+  const onMouseOver = starSelected => setOveredItem(starSelected)
 
-  const onMouseLeave = () => setSelectedStar(clickedStar)
+  const onMouseLeave = () => setOveredItem(clickedItem)
 
-  const onClick = () => setClickedStar(selectedStar)
-
-  const getRating = () => {
-    if (selectedStar.starType === 'half') {
-      return selectedStar.index * 2 - 1
-    }
-    if (selectedStar.starType === 'full') {
-      return selectedStar.index * 2
-    }
-
-    return selectedStar.index
-  }
+  const onClick = () => setClickedItem(overedItem)
 
   useDidMountEffect(() => {
-    setRating(getRating())
-  }, [selectedStar])
+    setRating(getRating(overedItem))
+  }, [overedItem])
 
   useDidMountEffect(() => {
     onRating(rating)
-  }, [clickedStar])
+  }, [clickedItem])
 
-  const getStar = starIndex => {
-    const numberOfFullStars = Math.floor(selectedStar.index)
-    let starType = 'empty'
-
-    if (starIndex < numberOfFullStars) {
-      starType = 'full'
-    } else if (starIndex === numberOfFullStars) {
-      starType = selectedStar.starType
-    }
-    return (
-      <Tooltip
-        key={starIndex}
-        show={starIndex === selectedStar.index}
-        text={rating}
-      >
-        <RatingIcon
-          key={starIndex}
-          index={starIndex}
+  const getRatingItems = () =>
+    Array(5)
+      .fill()
+      .map((_, index) => (
+        <RatingItem
+          key={index + 1}
+          itemIndex={index + 1}
+          overedItemIndex={overedItem.index}
+          overedItemType={overedItem.type}
+          rating={rating}
           onMouseOver={onMouseOver}
           onClick={onClick}
-          starType={starType}
           size={size}
           color={color}
         />
-      </Tooltip>
-    )
-  }
+      ))
 
   return (
     <Container>
       <RatingStyled onMouseLeave={onMouseLeave}>
-        {Array(5)
-          .fill()
-          .map((_, starIndex) => getStar(starIndex + 1))}
+        {getRatingItems()}
       </RatingStyled>
       <RatingInfo>({rating})</RatingInfo>
     </Container>
   )
 }
 
-const RatingPropTypes = {
+Rating.propTypes = {
   /** Star size */
   size: PropTypes.number,
   /** Star color */
@@ -104,12 +88,10 @@ const RatingPropTypes = {
   onRating: PropTypes.func
 }
 
-Rating.propTypes = RatingPropTypes
-
 Rating.defaultProps = {
   size: 30,
   color: 'orange',
   onRating: Function.prototype
 }
 
-export { Rating as default, RatingPropTypes }
+export { Rating }

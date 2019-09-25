@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
@@ -32,27 +31,47 @@ const IconContainer = styled.div`
   }
 `
 
-const getStarType = starType =>
+const getIconType = type =>
   ({
     empty: <StarBorder />,
     half: <StarHalf />,
     full: <Star />
-  }[starType])
+  }[type])
 
-const RatingIcon = ({ index, onMouseOver, onClick, starType, size, color }) => (
+const RatingIcon = ({ index, onMouseOver, onClick, type, size, color }) => (
   <Container>
     <LeftHalfOfIcon
-      onMouseOver={() => onMouseOver({ index, starType: 'half' })}
+      onMouseOver={() => onMouseOver({ index, type: 'half' })}
       onClick={onClick}
     />
     <RightHalfOfIcon
-      onMouseOver={() => onMouseOver({ index, starType: 'full' })}
+      onMouseOver={() => onMouseOver({ index, type: 'full' })}
       onClick={onClick}
     />
     <IconContainer size={size} color={color}>
-      {getStarType(starType)}
+      {getIconType(type)}
     </IconContainer>
   </Container>
 )
+
+RatingIcon.propTypes = {
+  /** */
+  index: PropTypes.number.isRequired,
+  /** */
+  onMouseOver: PropTypes.func,
+  /** */
+  onClick: PropTypes.func,
+  /** */
+  type: PropTypes.string.isRequired,
+  /** */
+  size: PropTypes.number.isRequired,
+  /** */
+  color: PropTypes.string.isRequired
+}
+
+RatingIcon.defaultProps = {
+  onMouseOver: Function.prototype,
+  onClick: Function.prototype
+}
 
 export default RatingIcon

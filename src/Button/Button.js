@@ -8,15 +8,13 @@ const ButtonStyled = styled.button`
 
 const Button = ({ name }) => <ButtonStyled>{name}</ButtonStyled>
 
-const ButtonPropTypes = {
+Button.propTypes = {
   /** Name */
   name: PropTypes.string
 }
-
-Button.propTypes = ButtonPropTypes
 
 Button.defaultProps = {
   name: 'Button'
 }
 
-export { Button as default, ButtonPropTypes }
+export { Button }
